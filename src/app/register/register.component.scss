@@ -1,0 +1,25 @@
+@import '../../styles.scss';
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: 500px;
+  margin: 50px auto;
+    .input-form {
+      margin: 10px auto;
+      width: $inputWidth;
+      height: $inputHeight;
+      background-color: $quaternary;
+    }
+    .btn {
+      margin-top: 10px;
+      width: $inputWidth;
+      height: 30px;
+      color: black;
+      font-weight: bold;
+      background-color: $secondary;
+    }
+}

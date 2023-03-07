@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+$primary: rgb(2, 48, 71);
+$secondary: rgb(251, 196, 57);
+$tertiary: rgb(181, 23, 158);
+$quaternary: rgb(248, 247, 255);
+$font: sans-serif;
+$inputWidth: 300px;
+$inputHeight: 30px;
+$borderRadius: 50%;
+
+body {
+  font-family: $font;
+  background-color: $primary;
+}
