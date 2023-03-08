@@ -1,0 +1,17 @@
+@import "../../styles.scss";
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    table {
+      border: 1px solid $secondary;
+      width: 500px;
+      height: 500px;
+        h2 {
+          color: $secondary;
+          font-family: $font;
+          text-align: center;
+        }
+  }
+}

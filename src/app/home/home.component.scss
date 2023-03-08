@@ -1,0 +1,42 @@
+@import "../../styles.scss";
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  width: auto;
+  background: url(../../media/header.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.header , .homepage {
+  text-align: center;
+  font-size: 16px;
+  font-family: $font;
+  color: $secondary;
+  margin: 10px auto;
+}
+
+ul {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+    li {
+      margin: auto 100px;
+      color: $quaternary;
+      font-family: $font;
+      font-size: 18px;
+      font-weight: bold;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.6s ease-in-out;
+        &:hover {
+          color: $secondary;
+          transform: scale(1.2);
+        }
+    }
+}

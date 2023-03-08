@@ -23,3 +23,9 @@
       background-color: $secondary;
     }
 }
+h4 {
+  color: $quaternary;
+  font-family: $font;
+  text-align: center;
+  text-decoration: underline $secondary;
+}
