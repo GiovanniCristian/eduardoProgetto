@@ -12,8 +12,9 @@ export class InputComponent implements OnInit {
 
   @Output() valueChange = new EventEmitter<string>();
 
-  newValue(value: string) {
-    this.valueChange.emit(value);
+  newValue(event: any) {
+    this.valueChange.emit(event.target.value);
+    console.log(event);
   }
 
 

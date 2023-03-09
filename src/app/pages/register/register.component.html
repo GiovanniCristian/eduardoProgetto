@@ -1,8 +1,8 @@
 <!-- Register è componente Padre -->
 <div class="register-form">
   <!-- INPUT è componente figlio contenuto in Register -->
-  <app-input type="email" placeholder="Your mail"></app-input>
-  <app-input type="password" placeholder="Your password"></app-input>
-  <button class="btn">Join Us</button>
+  <app-input type="email" placeholder="Your mail" (valueChange)="setEmail($event)"></app-input>
+  <app-input type="password" placeholder="Your password" (valueChange)="setPassword($event)"></app-input>
+  <button class="btn" (click)="registerUser()">Join Us</button>
 </div>
 <h4>C'mon don't be shy...</h4>
