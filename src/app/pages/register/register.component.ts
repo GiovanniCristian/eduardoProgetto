@@ -1,12 +1,13 @@
 import { UserService } from './../../shared/services/user.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { subscribeOn } from 'rxjs';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent implements OnInit , OnDestroy {
   // dati //
   data = {
     email: '',
@@ -16,9 +17,8 @@ export class RegisterComponent implements OnInit {
   //  imoprtazione del service nel costruttore del componente //
   constructor(private userService: UserService){ }
 
-
   ngOnInit(): void {
-}
+  }
   //  funzioni //
   setEmail(email: string):void {
     this.data.email = email
@@ -27,10 +27,21 @@ export class RegisterComponent implements OnInit {
     this.data.password = password
   }
 
+  // customizzare il messaggio in console per la chiamata post //
   registerUser() {
     this.userService.register(this.data).subscribe({
-      next: data => {console.log(data);},
-      error: err => {console.log(err);}
+      next: data => {
+        console.log('New user registered');
+        console.log(data);
+      },
+      error: err => {
+        console.log('Please, try Again');
+        console.log(err);
+      }
     })
+  }
+
+  ngOnDestroy(): void {
+    this.userService.unsubscribe();
   }
 }

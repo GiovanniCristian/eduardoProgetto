@@ -4,13 +4,17 @@ lo si importa nel costruttore del componente  */
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../models/user.model';
+import { IUser } from '../models/iuser.model';
+import { IUserRes } from '../models/iuser-res.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  users: User[] = new Array<User>();
+  unsubscribe() {
+    throw new Error('Method not implemented.');
+  }
+  users: IUser[] = new Array<IUser>();
 
   constructor(private http:HttpClient) { }
 
@@ -19,7 +23,9 @@ export class UserService {
   return this.http.post('https://reqres.in/api/users' , user)
   }
 
+  // questa chiamata riceve i dati "DATA" dal BE quindi inserisco il modello IUserRes //
+  // senza le [] perché mi torna un oggetto (oggeto DATA) //
   getAll() {
-    return this.http.get<User[]>('https://reqres.in/api/users')
+    return this.http.get<IUserRes>('https://reqres.in/api/users')
   }
 }
