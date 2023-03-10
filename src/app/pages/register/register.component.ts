@@ -7,18 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
-
+  // dati //
   data = {
     email: '',
     password: ''
   };
 
+  //  imoprtazione del service nel costruttore del componente //
   constructor(private userService: UserService){ }
 
 
   ngOnInit(): void {
 }
-
+  //  funzioni //
   setEmail(email: string):void {
     this.data.email = email
   }
@@ -27,10 +28,9 @@ export class RegisterComponent implements OnInit {
   }
 
   registerUser() {
-    this.userService.register(this.data).subscribe(data => {
-      console.log(data);
-
-      }, err => {console.log(err);
+    this.userService.register(this.data).subscribe({
+      next: data => {console.log(data);},
+      error: err => {console.log(err);}
     })
   }
 }

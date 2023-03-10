@@ -1,0 +1,8 @@
+@import "../../../../styles.scss";
+
+input {
+  margin: 10px auto;
+  width: $inputWidth;
+  height: $inputHeight;
+  background-color: $quaternary;
+}

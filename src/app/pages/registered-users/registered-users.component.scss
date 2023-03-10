@@ -3,15 +3,26 @@
 div {
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin: 200px 20px;
+
     table {
-      border: 1px solid $secondary;
-      width: 500px;
-      height: 500px;
+      border: 3px solid $secondary;
+      width: 600px;
+      height: 400px;
         h2 {
           color: $secondary;
           font-family: $font;
           text-align: center;
+        }
+        th {
+          text-align: center;
+          border-bottom: 1px solid $secondary;
+          height: 10px;
+        }
+        tbody {
+          text-align: center;
+          margin: 10px auto;
+          color: $quaternary;
         }
   }
 }
