@@ -1,8 +1,17 @@
 <!-- Register è componente Padre -->
 <div class="register-form">
-  <!-- INPUT è componente figlio contenuto in Register -->
+  <!-- APP-INPUT è componente figlio contenuto in Register -->
   <app-input type="email" placeholder="Your mail" (valueChange)="setEmail($event)"></app-input>
   <app-input type="password" placeholder="Your password" (valueChange)="setPassword($event)"></app-input>
   <button class="btn" (click)="registerUser()">Join Us</button>
+
+  <!-- customizzo il messaggio di errore e successo
+  della registrazione utente con una condizione -->
+
+  <div class="alert-message" *ngIf="this.sub" else error>
+    <p style="color: green;">Your data has been saved!</p>
+  </div>
+  <ng-template #error style="text-align: center; color: red;">Something went wrong...</ng-template>
 </div>
+
 <h4>C'mon don't be shy...</h4>

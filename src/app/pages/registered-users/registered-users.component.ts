@@ -11,10 +11,12 @@ import { Subscription } from 'rxjs';
 export class RegisteredUsersComponent implements OnInit , OnDestroy {
 
   users: IUser[] = new Array<IUser>();
+  subscription: any
 
   constructor(private userService: UserService){}
 
   ngOnInit(): void {
+    this.subscription =
     this.userService.getAll().subscribe((res) => {
       this.users = res.data;
       console.log(res.data);
@@ -22,6 +24,8 @@ export class RegisteredUsersComponent implements OnInit , OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.userService.unsubscribe();
+    if (this.subscription) {
+    this.subscription.unsubscribe();
+    }
   }
 }
